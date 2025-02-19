@@ -1,16 +1,6 @@
 def collatz(number):
-    value1 = number // 2
-    value2 = 3*number+1
-    try:
-        if (number % 2 == 0):
-            print ("The value for even is: " + str(value1))
-            return value1
-        else:
-            print ("The value for odd is: " + str(value2))
-            return value2 
-        
-    except ValueError:
-        print("Invalid Response.")
+    # For even numbers, return number // 2; for odd numbers, return 3 * number + 1
+    return number // 2 if number % 2 == 0 else 3 * number + 1
         
 def user_input():
     while True:
@@ -25,10 +15,8 @@ def user_input():
 correct_number = user_input()
 
 while correct_number != 1:
-        if correct_number % 2 == 0:
-            correct_number = collatz(correct_number)
-        else:
-            correct_number = collatz(correct_number)
+    correct_number = collatz(correct_number)
+    print(f"The value is {correct_number}")
             
-print("The number is: " + str(correct_number))
+print(f"The final number is {correct_number}. Hence, the program stopped.")
 
